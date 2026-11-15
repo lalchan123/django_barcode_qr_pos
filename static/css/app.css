@@ -1,0 +1,2 @@
+body{background:#f5f7fb}.card{border:0;box-shadow:0 2px 12px #14213d0d}.receipt{background:#fff;padding:28px;max-width:420px;box-shadow:0 2px 15px #0001}.label-card{background:white;padding:24px;max-width:420px}.label-card img{max-width:100%}
+@media print{nav,.no-print,button{display:none!important}body{background:#fff}.container{max-width:100%!important;padding:0!important}.receipt{box-shadow:none;margin:0 auto;padding:5mm;width:80mm;max-width:80mm;font-size:12px}.receipt .table{font-size:11px}.label-card{box-shadow:none}}

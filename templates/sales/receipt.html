@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Receipt {{ sale.invoice_no }}{% endblock %}{% block content %}
+<div class="receipt mx-auto"><div class="text-center"><h3>YOUR STORE NAME</h3><p>Sales Receipt</p><small>{{ sale.invoice_no }}<br>{{ sale.created_at|date:"d M Y, h:i A" }}</small></div><hr>
+<p>Customer: {{ sale.customer_name|default:"Walk-in Customer" }}</p><table class="table table-sm"><thead><tr><th>Item</th><th>Qty</th><th class="text-end">Total</th></tr></thead><tbody>{% for item in sale.items.all %}<tr><td>{{ item.product.name }}<br><small>{{ item.unit_price }}</small></td><td>{{ item.quantity }}</td><td class="text-end">{{ item.line_total }}</td></tr>{% endfor %}</tbody></table>
+<hr><div class="d-flex justify-content-between"><span>Subtotal</span><b>{{ sale.subtotal }}</b></div><div class="d-flex justify-content-between"><span>Discount</span><b>{{ sale.discount }}</b></div><div class="d-flex justify-content-between fs-5"><b>Grand Total</b><b>{{ sale.total }}</b></div><hr><p class="text-center">Thank you for shopping with us!</p></div>
+<div class="text-center no-print"><button class="btn btn-primary" onclick="window.print()">Print Customer Receipt</button> <a href="/" class="btn btn-secondary">New Sale</a></div>
+{% endblock %}

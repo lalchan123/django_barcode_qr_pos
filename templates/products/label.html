@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block content %}<div class="d-flex justify-content-between"><h3>Product Labels</h3><button class="btn btn-dark" onclick="window.print()">Print</button></div>
+<div class="label-card text-center mt-4"><h5>{{ product.name }}</h5><img src="{{ barcode_url }}" class="img-fluid" alt="Barcode"><div>{{ product.barcode }}</div><p class="mt-3">QR Code</p><img src="{{ qr_url }}" width="150" alt="QR code"></div>{% endblock %}
